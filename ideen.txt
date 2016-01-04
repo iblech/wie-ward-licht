@@ -1,0 +1,13 @@
+* n gleiche Ladungen im \R^3 haben mindestens 2^n Lagrange-Punkte (Punkte, wo
+  das E-Feld verschwindet).
+
+* Gibt es eigentlich irgendwelche Simulationen, die von Knoten experimentell
+  (in einer Simulation) zeigen, dass sie nichttrivial oder von Graphen
+  zeigen, dass sie nicht-planar sind, indem man irgendeine Form von Curvature
+  Flow anwendet? #Schülerakademie
+
+
+Fragen zur Untersuchung durch unsere Teilnehmenden:
+
+* Wie stabil ist ein Aufenthalt am Lagrange-Punkt?
+* Besitzt ein Lagrange-Punkt (scheinbare) Anziehungskraft?
