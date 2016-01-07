@@ -4,7 +4,8 @@
 
 *Hier entstehen Unterlagen zu einem Kurs auf der JGW-Schülerakademie in
 Papenburg vom 25. Juli bis 4. August 2015, gehalten von Meru Alagalingam und
-Ingo Blechschmidt.*
+Ingo Blechschmidt. Die Illustration zeigt Gravitationswellen in der Raumzeit,
+wie sie von bewegten Massen verursacht werden (Werner Benger, NASAblueshift).*
 
 Im November 2014 landete die Raumsonde Philae nach zehn Jahren Flug auf dem
 Kometen 67P/Tschurjumow-Gerassimenko. Die Reise war nur möglich, da man im
