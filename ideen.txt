@@ -12,3 +12,7 @@ Fragen zur Untersuchung durch unsere Teilnehmenden:
 
 * Wie stabil ist ein Aufenthalt am Lagrange-Punkt?
 * Besitzt ein Lagrange-Punkt (scheinbare) Anziehungskraft?
+
+
+* http://ccar.colorado.edu/asen5050/projects/projects_2012/wolma/
+  Mögliche Transferorbits zum Mond
