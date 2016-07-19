@@ -1,3 +1,9 @@
+=== Meta
+
+* Wir haben 7 Vormittage und 7 Nachmittage (3h 20min bzw. 2h) zur Verfügung.
+* Doku am vorletzten Kurstag.
+
+
 === Themen fürs Bootcamp
 
 * Vektoren und Matrizen
