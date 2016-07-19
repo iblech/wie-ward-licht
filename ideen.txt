@@ -1,3 +1,58 @@
+=== Themen fürs Bootcamp
+
+* Vektoren und Matrizen
+* Lineare Gleichungssysteme
+* Ableitung im Eindimensionalen (inkl. Ableitungsregeln und Numerik davon)
+* Ableitung im Mehrdimensionalen
+* Minima finden?
+* Integration
+* Gewöhnliche und partielle Differentialgleichungen
+* Python
+
+
+=== Physikalische Themen
+
+* Freier Fall
+* Schwingende Saite (mit Klangexperimenten?)
+* Maxwell-Gleichungen (vor allem theoretisch; vorher Vektorkalkül einführen)
+* Navier--Stokes mit Verjüngung und eingebetteten Teilchen
+  (sieht man Verwirbelung schon bei geringer Auflösung?)
+* Orbitalmechanik (Mondlandung, Lagrange-Punkte, Swing-by-Manöver, Tyrannei der
+  Raketengleichung)
+* ART
+
+
+=== Projekte/KüA's
+
+* Videospielprogrammierung
+* Modem programmieren
+
+
+=== Vorträge
+
+* Entfernungs- und Massenbestimmung in der Antike (nach Terence Tao)
+* Conway's Game of Life (inkl. Sichtung des gigantischen Wikis dazu)
+
+
+=== Noch nachdenken
+
+* Schrödingergleichung
+* Fouriertransformation
+* Oberflächenwellen
+* Auf jeden Fall Quecksilber!
+* Casimir-Effekt?
+* Roboter
+* Quadcopter
+* Paper verteilen! Vorträge zuweisen!
+* Euler--Lagrange (Kettenlinie?)
+* Shape of a drum
+* Stromkreise
+* Mehr Experimente?
+* Thermodynamik?
+
+
+=== Unsortiert
+
 * n gleiche Ladungen im \R^3 haben mindestens 2^n Lagrange-Punkte (Punkte, wo
   das E-Feld verschwindet).
 
