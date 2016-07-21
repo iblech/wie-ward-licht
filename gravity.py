@@ -7,10 +7,10 @@ import pygame
 import sys
 from pygame.locals import *
 
-FPS = 15
+FPS = 1
 
 pygame.init()
-DISPLAYSURF = pygame.display.set_mode((800, 600))
+DISPLAYSURF = pygame.display.set_mode((600, 600))
 WHITE = (255, 255, 255)
 clock = pygame.time.Clock()
 pygame.display.set_caption("Gravitation")
@@ -18,27 +18,39 @@ pygame.display.set_caption("Gravitation")
 bodies = {
     "earth": {
         "mass": 5.927e24,
-        "pos": np.array([0,0]),
-        "vel": np.array([0,0]),
+        "pos": np.array([0.0, 0.0]),
+        "vel": np.array([0.0, 0.0]),
         "hist": []
     },
     "moon": {
         "mass": 7.342e22,
-        "pos": np.array([0, 362600000]),
-        "vel": np.array([-1022, 0]),
+        "pos": np.array([0.0, 362600000]),
+        "vel": np.array([-1022, 0.0]),
         "hist": []
     },
     "iss": {
         "mass": 419455,
-        "pos": np.array([0, 409000 + 6370000]),
-        "vel": np.array([-7660, 0]),
+        "pos": np.array([0.0, 409000 + 6370000]),
+        "vel": np.array([-7660.0, 0.0]),
+        "hist": []
+    },
+    "l1": {
+        "mass": 100,
+        "pos": np.array([0.0, 362600000 * (1 - np.power(7.342e22 / (3*5.927e24), 1/3))]),
+        "vel": np.array([-1022 * (1 - np.power(7.342e22 / (3*5.927e24), 1/3)), 0.0]),
+        "hist": []
+    },
+    "l5": {
+        "mass": 100,
+        "pos": np.array([np.cos(np.pi / 100) * 362600000, np.sin(np.pi / 100) * 362600000]),
+        "vel": 1022 * np.array([np.cos(np.pi * (1/100 + 1/2)), np.sin(np.pi * (1/100 + 1/2))]),
         "hist": []
     }
 }
 
 G = 6.67408e-11
-speedup = 600
-numberOfMiniSteps = 10
+speedup = 86400
+numberOfMiniSteps = 100
 
 def runPhysics(dt):
     for name in bodies:
@@ -53,8 +65,8 @@ def runPhysics(dt):
         bodies[name]["pos"] = bodies[name]["pos"] + dt * bodies[name]["vel"]
 
 def toPlottingCoordinates(pos):
-    scale = 50000000 / 300
-    return (400 + int(pos[0] / scale), 300 - int(pos[1] / scale))
+    scale = 500000000 / 300
+    return (300 + int(pos[0] / scale), 300 - int(pos[1] / scale))
 
 def drawDot(pos):
     pygame.draw.circle(DISPLAYSURF, [255,0,0], toPlottingCoordinates(pos), 8, 0)
