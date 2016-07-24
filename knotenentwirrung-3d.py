@@ -18,41 +18,20 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("Knotenentwirrung")
 
 bodies = []
-numBodies = 5
+numBodies = 15
 
 for i in range(numBodies):
-    phi = i / numBodies * np.pi
+    phi = i / numBodies * 2 * np.pi
     bodies.append({
-        "pos": np.array([np.cos(phi), 0.5 + np.sin(phi)]),
-        "vel": np.array([0.0, 0.0])
-    })
-
-for i in range(numBodies):
-    theta = i / numBodies
-    bodies.append({
-        "pos": (1 - theta) * np.array([-1.0, 0.5]) + theta * np.array([1.0, -0.5]),
-        "vel": np.array([0.0, 0.0])
-    })
-
-for i in range(numBodies):
-    phi = i / numBodies * np.pi
-    bodies.append({
-        "pos": np.array([np.cos(phi), -0.5 - np.sin(phi)]),
-        "vel": np.array([0.0, 0.0])
-    })
-
-for i in range(1, numBodies - 1):
-    theta = i / numBodies
-    bodies.append({
-        "pos": (1 - theta) * np.array([-1.0, -0.5]) + theta * np.array([1.0, 0.5]) + np.array([-0.1, 0]),
-        "vel": np.array([0.0, 0.0])
+        "pos": np.array([np.sin(phi) + 2*np.sin(2*phi), np.cos(phi) - 2*np.cos(2*phi), -np.sin(3*phi)]),
+        "vel": np.array([0.0, 0.0, 0.0])
     })
 
 #bodies[0]["pos"] = bodies[0]["pos"] + np.array([0.2, 0])
 
 def calcAcceleration(i):
     b = bodies[i]
-    force = np.array([0.0, 0.0])
+    force = np.array([0.0, 0.0, 0.0])
 
     for j in range(len(bodies)):
         if i == j: continue
@@ -74,19 +53,26 @@ def runPhysics(dt):
         acc = calcAcceleration(i)
         b["vel"] = b["vel"] + dt * acc
 
-zoom = { "value": 1.0, "delta": 0.0 }
+    for i in range(len(bodies)):
+        bodies[i]["vel"] = np.exp(-dt) * bodies[i]["vel"]
+
+zoom  = { "value": 1.0, "delta": 0.0 }
+angle = { "value": 0.0, "delta": 0.0 }
 
 def toPlottingCoordinates(pos):
     scale = 200 / zoom["value"]
-    return (300 + int(pos[0] * scale), 300 - int(pos[1] * scale))
+    x     =  np.cos(angle["value"]) * pos[0] + np.sin(angle["value"]) * pos[2]
+    y     = pos[1]
+    return (300 + int(x * scale), 300 - int(y * scale))
 
 def drawKnot():
     pygame.draw.lines(DISPLAYSURF, (255,0,0), 1, [ toPlottingCoordinates(b["pos"]) for b in bodies ])
     for b in bodies:
         pygame.draw.circle(DISPLAYSURF, (0,0,0), toPlottingCoordinates(b["pos"]), 3, 0)
 
-    box = [(1,1), (-1,1), (-1,-1), (1,-1)]
-    pygame.draw.lines(DISPLAYSURF, (200,200,200), 1, [ toPlottingCoordinates(b) for b in box ])
+    pygame.draw.lines(DISPLAYSURF, (200,200,200), 0, [ toPlottingCoordinates(b) for b in [[0,0,0], [1,0,0]] ])
+    pygame.draw.lines(DISPLAYSURF, (200,200,200), 0, [ toPlottingCoordinates(b) for b in [[0,0,0], [0,1,0]] ])
+    pygame.draw.lines(DISPLAYSURF, (200,200,200), 0, [ toPlottingCoordinates(b) for b in [[0,0,0], [0,0,1]] ])
 
 simulatedTime = 0
 userTime      = 0
@@ -103,8 +89,9 @@ while True:
 
     maxValue = np.max(np.abs([ b["pos"] for b in bodies ]))
 
-#   zoom["delta"] = zoom["delta"] + (maxValue - zoom["value"]) / 1000
-    zoom["value"] = zoom["value"] + (maxValue - zoom["value"]) / 1
+    zoom["value"]  = zoom["value"] + (maxValue - zoom["value"]) / 1
+    angle["value"] = angle["value"] + angle["delta"]
+    angle["delta"] = 0.9 * angle["delta"]
 
     print zoom["value"], maxValue
 
@@ -116,3 +103,9 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+
+    pressed = pygame.key.get_pressed()
+    if pressed[pygame.K_RIGHT]:
+        angle["delta"] = 0.1
+    elif pressed[pygame.K_LEFT]:
+        angle["delta"] = -0.1
