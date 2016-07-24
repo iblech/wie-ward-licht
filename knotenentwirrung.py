@@ -18,14 +18,37 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("Knotenentwirrung")
 
 bodies = []
-numBodies = 10
+numBodies = 5
+
 for i in range(numBodies):
-    phi = i / numBodies * 2 * np.pi
+    phi = i / numBodies * np.pi
     bodies.append({
-        "pos": np.array([np.cos(phi), np.sin(phi)]),
+        "pos": np.array([np.cos(phi), 0.5 + np.sin(phi)]),
         "vel": np.array([0.0, 0.0])
     })
-bodies[0]["pos"] = bodies[0]["pos"] + np.array([0.2, 0])
+
+for i in range(numBodies):
+    theta = i / numBodies
+    bodies.append({
+        "pos": (1 - theta) * np.array([-1.0, 0.5]) + theta * np.array([1.0, -0.5]),
+        "vel": np.array([0.0, 0.0])
+    })
+
+for i in range(numBodies):
+    phi = i / numBodies * np.pi
+    bodies.append({
+        "pos": np.array([np.cos(phi), -0.5 - np.sin(phi)]),
+        "vel": np.array([0.0, 0.0])
+    })
+
+for i in range(1, numBodies - 1):
+    theta = i / numBodies
+    bodies.append({
+        "pos": (1 - theta) * np.array([-1.0, -0.5]) + theta * np.array([1.0, 0.5]) + np.array([-0.1, 0]),
+        "vel": np.array([0.0, 0.0])
+    })
+
+#bodies[0]["pos"] = bodies[0]["pos"] + np.array([0.2, 0])
 
 def calcAcceleration(i):
     b = bodies[i]
@@ -51,8 +74,10 @@ def runPhysics(dt):
         acc = calcAcceleration(i)
         b["vel"] = b["vel"] + dt * acc
 
+zoom = { "value": 1.0, "delta": 0.0 }
+
 def toPlottingCoordinates(pos):
-    scale = 200
+    scale = 200 / zoom["value"]
     return (300 + int(pos[0] * scale), 300 - int(pos[1] * scale))
 
 def drawKnot():
@@ -68,11 +93,17 @@ G             = 1
 
 while True:
     userTime = userTime + clock.tick(FPS) * speedup / 1000
-    print userTime / speedup
 
     while simulatedTime < userTime:
         runPhysics(dt)
         simulatedTime = simulatedTime + dt
+
+    maxValue = np.max(np.abs([ b["pos"] for b in bodies ]))
+
+#   zoom["delta"] = zoom["delta"] + (maxValue - zoom["value"]) / 1000
+    zoom["value"] = zoom["value"] + (maxValue - zoom["value"]) / 10
+
+    print zoom["value"]
 
     DISPLAYSURF.fill(WHITE)
     drawKnot()
