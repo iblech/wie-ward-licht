@@ -15,6 +15,7 @@
 
 * Python-Bootcamp: Variablen, for, if (kein while)
   mit Aufgaben/Demos: Summe der ersten n Zahlen, Summe der ersten n
-  Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Primzahlen
+  Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Prüfung auf Primalität,
+  Summe der Primzahlen unter n
 
 * Ana-Bootcamp: (mal sehen)
