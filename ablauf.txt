@@ -1,0 +1,20 @@
+=== Tag 0
+
+* https://www.youtube.com/watch?v=vOFcHqImXJ8
+  Navier--Stokes
+
+* https://www.youtube.com/watch?v=iJKladnXpUs
+  Kerbal Space Program
+
+* Maxwell-Gleichung
+
+* Shape of a drum
+
+
+=== Tag 1
+
+* Python-Bootcamp: Variablen, for, if (kein while)
+  mit Aufgaben/Demos: Summe der ersten n Zahlen, Summe der ersten n
+  Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Primzahlen
+
+* Ana-Bootcamp: (mal sehen)
