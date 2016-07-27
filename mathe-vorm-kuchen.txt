@@ -1,4 +1,5 @@
 1. Ameisen und 20 Zwerge
+2. Münzen und 100 Gefangene
 
 Ideen:
 * Münzwiegung
