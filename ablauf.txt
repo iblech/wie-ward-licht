@@ -18,4 +18,27 @@
   Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Prüfung auf Primalität,
   Summe der Primzahlen unter n
 
-* Ana-Bootcamp: (mal sehen)
+* Ana-Bootcamp: Ableitung im Eindimensionalen
+
+
+=== Tag 2
+
+* Gewöhnliche Differentialgleichungen, explizites Euler-Verfahren
+
+
+=== Tag 3
+
+* Partielle Differentialgleichungen und ihre Numerik am Beispiel der
+  Poissongleichung
+
+
+=== Tag ?
+
+* Weiter mit Wärmeleitungsgleichung, teilweise auch mit zeitlicher Entwicklung
+
+* Freie Arbeit an Projekten
+
+
+=== Tag ?
+
+* Freie Arbeit an Projekten

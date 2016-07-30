@@ -28,6 +28,21 @@
 * ART
 
 
+=== Angeschriebene Projekte
+
+* Gordischer Knoten
+* Entropie
+* Shape of a drum
+* Orbitalmechanik
+* Planetenlandung
+* Navier--Stokes
+* Maxwell
+* Quecksilber
+* Alkoholabbau
+* Lustige Federn
+* Allgemeine Relativitätstheorie
+
+
 === Projekte/KüA's
 
 * Videospielprogrammierung
