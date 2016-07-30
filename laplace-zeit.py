@@ -63,7 +63,7 @@ WHITE = (255, 255, 255)
 RED   = (255,   0,   0)
 GRAY  = (200, 200, 200)
 clock = pygame.time.Clock()
-pygame.display.set_caption("Knotenentwirrung")
+pygame.display.set_caption("Yeah, Wärmeentwicklung")
 
 #fig, ax = plt.subplots()
 #heatmap = ax.pcolor(x.reshape((hoehe+1, breite+1)))
