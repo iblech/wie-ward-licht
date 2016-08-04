@@ -42,3 +42,28 @@
 === Tag ?
 
 * Freie Arbeit an Projekten
+
+
+=== Tag N
+
+* Diskussion der vierten Maxwell-Gleichung
+
+* Differentialformen: zunächst konstante; dann nichtkonstante; dann d; dann
+  Pullback; dann Mutter aller Transformationsregeln; dann Mutter aller
+  Integrationssätze.
+
+  Erklärung von Differentialformen einfach durch eine Tabelle:
+
+      Differentialform   Gebiet   Auswertung der Form auf dem Gebiet
+      dx                 [0,3]    3
+      dx dy              ...
+
+* Verbindung zwischen der Feld- und Formformulierung: Ist E ein Vektorfeld,
+  so bezeichnet <E> die Differentialform E_1 dx + E_2 dy + E_3 dz.
+  Dann gilt:
+
+  * d(phi) = <grad(phi)>
+  * ...
+
+* Interpretation der klassischen Integralsätze (HDI, Gauß, Stokes) als
+  Spezialfälle von Stokes
