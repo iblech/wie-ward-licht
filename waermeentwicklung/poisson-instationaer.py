@@ -21,7 +21,7 @@ N = (hoehe + 1) * (breite + 1)
 A = scipy.sparse.lil_matrix((N, N))
 b = np.zeros((N, 1))
 
-# Gleichungen
+# Gleichungen, #indexschlacht lässt grüßen!
 for i in range(0,hoehe+1):
     for j in range(0,breite+1):
         hier   = i       * (breite + 1) + j
@@ -45,10 +45,7 @@ for i in range(0,hoehe+1):
             A[hier, unten]  =  1/h**2
             A[hier, rechts] =  1/h**2
 
-            if i == int(hoehe/2) and j == int(breite/2):
-                b[hier] = 0
-            else:
-                b[hier] = 0
+            b[hier] = 0
 
 # Lösung
 A = A.tocsr()
@@ -56,18 +53,11 @@ print(A.todense())
 x = scipy.sparse.linalg.spsolve(A, b)
 print(x)
 
+px     = 25  # Kantenlänge der einzelnen Blöcke
 pygame.init()
-px = 25
-DISPLAYSURF = pygame.display.set_mode(((breite+1)*px, (hoehe+1)*px))
-WHITE = (255, 255, 255)
-RED   = (255,   0,   0)
-GRAY  = (200, 200, 200)
-clock = pygame.time.Clock()
 pygame.display.set_caption("Yeah, Wärmeentwicklung")
-
-#fig, ax = plt.subplots()
-#heatmap = ax.pcolor(x.reshape((hoehe+1, breite+1)))
-#plt.show()
+screen = pygame.display.set_mode(((breite+1)*px, (hoehe+1)*px))
+clock  = pygame.time.Clock()
 
 def sigmoid(t): return 1/(1 + np.exp(-t))
 
@@ -77,13 +67,13 @@ def drawHeatmap(x):
     rows, cols = x.shape
     for i in range(rows):
         for j in range(cols):
-            pygame.draw.rect(DISPLAYSURF, scale(*heatmap(sigmoid(x[i,j]))), (j*px, (hoehe-i)*px, px, px), 0)
+            pygame.draw.rect(screen, scale(*heatmap(sigmoid(x[i,j]))), (j*px, (hoehe-i)*px, px, px), 0)
 
-speedup = 10
-dt      = 0.1
-userTime = 0
+speedup       = 10
+dt            = 0.1
+userTime      = 0
 simulatedTime = 0
-FPS = 10
+FPS           = 10
 
 def runPhysics(dt):
     global x
@@ -97,7 +87,7 @@ while True:
         runPhysics(dt)
         simulatedTime = simulatedTime + dt
 
-    DISPLAYSURF.fill(WHITE)
+    screen.fill((255,0,0))
     drawHeatmap(x.reshape((hoehe+1, breite+1)))
     pygame.display.update()
 
@@ -111,6 +101,6 @@ while True:
             i   = hoehe - int(pos[1] / px)
             hier = i * (breite + 1) + j
             if event.button == 1:
-                b[hier] = b[hier] + 0.5
+                b[hier] = b[hier] + 1
             else:
-                b[hier] = b[hier] - 0.5
+                b[hier] = b[hier] - 1

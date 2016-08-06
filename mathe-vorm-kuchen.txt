@@ -3,7 +3,13 @@
 3. Zwergen aus einer Höhle und 100 Zwerge mit Zahlen
 4. Schokolade brechen und blaue Augen
 5. Lügen- und Wahrheitsinsel, Smullyan und Ergänzung zu blauen Augen
+6. ???
+
+Was war die Reihenfolge?
+* 100 rote und gelbe Bonbons
+* Quanten-Tic-Tac-Toe
+* Zaubertrick mit den 4x4 Münzen
+* Neun Münzen, eine davon leichter als die anderen
 
 Ideen:
-* Münzwiegung
-* Das von Christoph
+* Das von Christoph: Ei aus Hochhaus herunterfallen lassen

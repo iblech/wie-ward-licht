@@ -41,6 +41,7 @@
 * Alkoholabbau
 * Lustige Federn
 * Allgemeine Relativitätstheorie
+* Modem
 
 
 === Projekte/KüA's
@@ -49,7 +50,7 @@
 * Modem programmieren
 
 
-=== Vorträge
+=== Vorträge, die man vergeben könnte
 
 * Entfernungs- und Massenbestimmung in der Antike (nach Terence Tao)
 * Conway's Game of Life (inkl. Sichtung des gigantischen Wikis dazu)
@@ -88,7 +89,6 @@ Fragen zur Untersuchung durch unsere Teilnehmenden:
 
 * Wie stabil ist ein Aufenthalt am Lagrange-Punkt?
 * Besitzt ein Lagrange-Punkt (scheinbare) Anziehungskraft?
-
 
 * http://ccar.colorado.edu/asen5050/projects/projects_2012/wolma/
   Mögliche Transferorbits zum Mond
