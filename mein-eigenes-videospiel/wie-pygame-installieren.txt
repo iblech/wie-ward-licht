@@ -1,0 +1,15 @@
+Um die PyGame-Bibliothek zu installieren, muss man bestimmte Befehle in ein
+Terminal (bzw. unter Windows die "Anaconda-Shell") eingeben.
+
+Unter Linux:
+
+    apt-get install python-pygame
+
+Unter Mac OS X:
+
+    pip install pygame
+
+Unter Windows:
+
+    conda install -c https://conda.anaconda.org/tlatorre python
+    conda install -c https://conda.binstar.org/krisvanneste pygame
