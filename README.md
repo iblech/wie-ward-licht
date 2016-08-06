@@ -3,7 +3,7 @@
 ![Bewegte Massen erzeugen Gravitationswellen in der Raumzeit. (Werner Benger, NASAblueshift)](gravitationswellen.jpeg)
 
 *Hier entstehen Unterlagen zu einem Kurs auf der JGW-Schülerakademie in
-Papenburg vom 25. Juli bis 4. August 2015, gehalten von Meru Alagalingam und
+Papenburg vom 25. Juli bis 4. August 2016, gehalten von Meru Alagalingam und
 Ingo Blechschmidt. Die Illustration zeigt Gravitationswellen in der Raumzeit,
 wie sie von bewegten Massen verursacht werden (Werner Benger, NASAblueshift).*
 
