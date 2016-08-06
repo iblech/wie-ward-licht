@@ -1,0 +1,265 @@
+\documentclass[twoside]{zirkelblatt1415}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{tabto}
+\usepackage{booktabs}
+\usepackage{relsize}
+\let\raggedsection\centering
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{defn'}{Vorläufge Definition}[section]
+\newtheorem{axiom}[defn]{Axiom}
+\newtheorem{bsp}[defn]{Beispiel}
+
+\theoremstyle{plain}
+
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{motto}[defn]{Motto}
+\newtheorem{wunder}[defn]{Wunder}
+\newtheorem{ueberlegung}[defn]{Überlegung}
+\newtheorem{lemma}[defn]{Lemma}
+\newtheorem{kor}[defn]{Korollar}
+\newtheorem{hilfsaussage}[defn]{Hilfsaussage}
+\newtheorem{satz}[defn]{Satz}
+\newtheorem{thm}[defn]{Theorem}
+
+\theoremstyle{remark}
+\newtheorem{bem}[defn]{Bemerkung}
+\newtheorem{warnung}[defn]{Warnung}
+\newtheorem{aufg}[defn]{Aufgabe}
+
+\definecolor{darkred}{rgb}{0.7,0,0}
+\definecolor{shadecolor}{rgb}{.95,.95,.95}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\prim}[1]{\text{\textnormal{$#1$ prim}}}
+\newcommand{\bigsum}{\mathop{\mathlarger{\mathlarger{\sum}}}}
+\newcommand{\bigprod}{\mathop{\mathlarger{\mathlarger{\prod}}}}
+
+\DeclareMathOperator{\ld}{ld}
+\newcommand{\RR}{\mathbb{R}}
+
+\usepackage{mathpazo}
+
+\title{de-Rham-Kohomologie: ein erster Einblick}
+\author{für den JGW-Kurs \emph{Wie ward Licht?}}
+
+\begin{document}
+
+\maketitle
+
+Kohomologietheorien gehören zu den wichtigsten Werkzeugen der reinen
+Mathematik. Sie kommen in verschiedenen Ausprägungen in vielen Gebieten der
+Mathematik vor, unter anderem in der algebraischen Topologie, der
+Differentialgeometrie, der algebraischen Geometrie, der Funktionentheorie und
+der homologischen Algebra. Wenn man möchte, kommt man mit Kohomologietheorien
+üblicherweise ab dem vierten oder fünften Studiensemester in Berührung; wenn
+man sich aber eher für angewandte Mathematik interessiert, kann man sie auch
+umgehen.
+
+Die hauptsächlich in Differentialgeometrie verwendete Variante von Kohomologie
+heißt \emph{de-Rham-Kohomologie}. Deren Grundlagen sollen hier dargelegt
+werden.
+
+
+\section{Erinnerung an Differentialformen}
+
+Der "`magische $d$-Operator"' macht aus einer~$k$-Form eine~$(k+1)$-Form. An
+wichtigen Rechenregeln muss man sich nur die vier folgenden merken:
+
+\begin{enumerate}
+\item Ist~$f$ eine Funktion (also eine~$0$-Form), so gilt
+\[ df = d(f) = \frac{\partial f}{\partial x} dx +
+  \frac{\partial f}{\partial y} dy +
+  \frac{\partial f}{\partial z} dz. \]
+Wenn~$f$ nicht nur von~$x$, $y$ und~$z$, sondern noch von weiteren Variablen
+abhängt, so muss die Summe entsprechend ergänzt werden.
+\item Für alle Differentialformen~$\omega$ gilt~$d(d(\omega)) = 0$. Kürzer,
+aber etwas verwirrend, schreibt man auch: "`$d^2 = 0$"'.
+\item Der $d$-Operator ist additiv, es gilt also $d(\omega + \tau) = d(\omega)
++ d(\tau)$.
+\item Der $d$-Operator erfüllt die "`graduierte Produktregel": Ist~$\omega$
+eine~$k$-Form und~$\tau$ eine~$\ell$-Form, so gilt
+\[ d(\omega \wedge \tau) = d(\omega) \wedge \tau +
+  (-1)^k \omega \wedge d(\tau). \]
+\end{enumerate}
+
+\begin{aufgabe}{Angst vor $d$?}
+Vollziehe folgende Beispiele nach.
+\begin{enumerate}
+\item $d(x^2 - yz) = 2x\,dx - z\,dy - y\,dz$
+\item $d(e^x + \sin(z^2)) = e^x\,dx + 2z\cos(z^2)\,dz$
+\item $d(x \wedge dy) = dx \wedge dy$
+\item $d(f(x)\,dy) = f'(x)\,dx\wedge dy$
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Trivialität höherer Differentialformen}
+Mache dir klar: Wenn als einzige Variable~$x$ vorkommen darf, so ist die
+"`Nullform"' die einzige~$2$-Form.
+
+Etwas präziser ausgedrückt: Alle~$k$-Formen auf~$\RR^1$ mit~$k \geq 2$ sind
+Null.
+\end{aufgabe}
+
+
+\section{Geschlossene und exakte Differentialformen}
+
+Eine Differentialform~$\omega$ heißt genau dann \emph{geschlossen},
+wenn~$d\omega = 0$. Eine Differentialform~$\omega$ heißt genau dann
+\emph{exakt}, wenn es eine weitere Differentialform~$\alpha$ mit~$d\alpha =
+\omega$ gibt. Jede exakte Differentialform ist auch geschlossen, aber es gibt
+geschlossene Differentialformen, die nicht exakt sind. Wir werden sehen, dass
+de-Rham-Kohomologie gerade die Größe dieses Defekts misst.
+
+\begin{aufgabe}{Beispiele und Nichtbeispiele für geschlossene
+Differentialformen}
+Zeige, dass die folgenden Differentialformen jeweils geschlossen sind:
+\begin{enumerate}
+\item $dx$
+\item $\sin(x)\,dx$
+\item $47$ (konstante Funktion, also eine $0$-Form)
+\item $x^2 e^{yz}\,dx \wedge dy \wedge dz$
+\end{enumerate}
+Zeige, dass die folgenden Differentialformen jeweils nicht geschlossen sind:
+\begin{enumerate}
+\addtocounter{enumi}{4}
+\item $\sin(x)$ (eine $0$-Form)
+\item $-y\,dx + x\,dy$
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Aus Exaktheit folgt Geschlossenheit}
+Zeige, dass jede exakte Differentialform~$\omega$ auch geschlossen ist.
+\end{aufgabe}
+
+\begin{aufgabe}{Wegunabhängigkeit bei geschlossenen Differentialformen}
+Seien~$\Gamma_1$ und~$\Gamma_2$ zwei Kurven mit gleichem Start- und Endpunkt
+(zum Beispiel in der Ebene). Sei~$\omega$ eine geschlossene~$1$-Form. Zeige,
+dass~$\int_{\Gamma_1} \omega = \int_{\Gamma_2} \omega$.
+
+\emph{Tipp.} Die Differenz aus linker und rechter Seite lässt sich ebenfalls
+als Integral schreiben, wobei der Integrationsweg der Rand eines
+zweidimensionalen Gebiets ist. Verstehe diese kryptische Bemerkung und verwende
+dann den Satz von Stokes.
+\end{aufgabe}
+
+
+\section{Die Kohomologie des $\RR^1$}
+
+Die reelle Zahlengerade~$\RR^1$ ist "`kohomologisch trivial"': Jede
+geschlossene~$1$-Form~$\omega$ auf~$\RR^1$ ist exakt. (Ebenfalls sind
+alle geschlossenen~$2$-, $3$- und auch alle höheren Formen exakt. Das ist aber
+keine interessante Aussage -- wieso?)
+
+Das ist etwas Besonderes. Für kompliziertere geometrische Objekte als~$\RR^1$
+-- insbesondere solche, die Löcher enthalten, wie etwa die zweidimensionale
+Ebene mit entferntem Ursprung -- stimmt die Aussage nämlich nicht.
+
+\begin{aufgabe}{Exaktheit aller~$1$-Formen auf~$\RR^1$}
+Sei~$\omega = f(x)\,dx$ eine beliebige~$1$-Form auf~$\RR^1$. Da die
+einzige~$2$-Form auf~$\RR^1$ die Nullform ist, ist~$d\omega = 0$. Wir
+definieren
+\[ g(x) \defeq \int_0^x f(t)\,dt. \]
+Zeige: $\omega = dg$.
+\end{aufgabe}
+
+
+\section{Die Kohomologie des $\RR^2$}
+
+Auch die Zahlenebene~$\RR^2$ ist kohomologisch trivial. Das ist Gegenstand der
+folgenden zwei Aufgaben.
+
+\begin{aufgabe}{Exaktheit aller geschlossenen~$2$-Formen auf~$\RR^2$}
+Sei~$\omega = f(x,y)\,dx \wedge dy$ eine beliebige~$2$-Form auf~$\RR^2$.
+\begin{enumerate}
+\item Zeige: Die Form~$\omega$ ist automatisch geschlossen.
+\item Wir definieren die~$1$-Form
+\[ \alpha \defeq \left(\int_0^x f(t,y)\,dt\right) dy. \]
+Zeige: $\omega = d\alpha$.
+\end{enumerate}
+\end{aufgabe}
+
+\begin{aufgabe}{Exaktheit aller geschlossenen~$1$-Formen auf~$\RR^2$}
+Sei~$\omega = f(x,y)\,dx + g(x,y)\,dy$ eine beliebige~$1$-Form auf~$\RR^2$.
+\begin{enumerate}
+\item Zeige: Genau dann ist~$\omega$ geschlossen, wenn
+$\frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} = 0$.
+\item Wir definieren
+\[ h(x,y) \defeq \int_0^x f(t)\,dt + \int_0^y g(t)\,dt. \]
+Zeige: $\omega = dh$.
+\end{enumerate}
+\end{aufgabe}
+
+
+\section{Die Kohomologie des $\RR^2 \setminus \{0\}$}
+
+Unser erstes Beispiel für eine geometrische Figur, die nicht kohomologisch
+trivial ist, ist die "`gelochte Ebene"': die Zahlenebene~$\RR^2$, aus der der
+Ursprung entfernt wurde. Auf dieser gibt es Differentialformen, welche zwar
+geschlossen, aber nicht exakt sind.
+
+\begin{aufgabe}{Eine nicht-exakte Differentialform}
+Wir betrachten die Differentialform
+\[ \omega \defeq \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy. \]
+Beim Punkt~$(0|0)$ ist~$\omega$ nicht definiert, daher ist~$\omega$ nur eine
+Differentialform auf~$\RR^2\setminus\{0\}$ und nicht eine auf ganz~$\RR^2$.
+
+\begin{enumerate}
+\item Zeige: Die Form~$\omega$ ist geschlossen.
+\item Berechne das Integral von~$\omega$ über den Einheitskreis. (Zur
+Kontrolle: Das Ergebnis ist~$2\pi$.)
+\item Zeige: Die Form~$\omega$ ist nicht exakt. (Nutze den Satz von Stokes und
+die vorherige Teilaufgabe.)
+\end{enumerate}
+\end{aufgabe}
+
+Damit eine~$1$-Form auf~$\RR^2\setminus\{0\}$ exakt ist, genügt es nicht, dass
+sie lediglich geschlossen ist. Stattdessen muss auch noch ihr Integral über die
+Einheitskreislinie verschwinden (Null sein). Man sagt auch: \emph{Eine Basis
+der ersten Homologie von~$\RR^2\setminus\{0\}$ besteht aus dem Einheitskreis.}
+
+\begin{aufgabe}{Eine nicht-exakte Differentialform}
+Sei~$\omega$ eine geschlossene~$1$-Form auf~$\RR^2\setminus\{0\}$, für die das
+Integral über die Einheitskreislinie verschwindet. Wir definieren die Funktion
+\[ h(x,y) \defeq \int_\Gamma \omega, \]
+wobei~$\Gamma$ \emph{irgendeine} Kurve von~$(1|0)$ nach~$(x|y)$ ist, welche
+nicht den Ursprung passiert.
+\begin{enumerate}
+\item Zeige: Die Definition von~$h(x,y)$ ist unabhängig von der Wahl der
+Kurve~$\Gamma$. Andere Kurven mit selben Start- und Endpunkt führen also zum
+gleichen Integralwert. (Verwende dazu die Geschlossenheit von~$\omega$ und den
+Satz von Stokes.)
+\item Weise die Exaktheit von~$\omega$ nach, indem du beweist,
+dass~$\omega = dh$.
+\end{enumerate}
+\end{aufgabe}
+
+
+\section{Weitere Beispiele für triviale und nichttriviale Kohomologie}
+
+Versuche, geometrische Intuition für die folgenden Behauptungen zu gewinnen und
+sie vielleicht sogar zu beweisen.
+
+\begin{enumerate}
+\item Eine~$1$-Form auf dem gelochten dreidimensionalen
+Raum~$\RR^3\setminus\{0\}$ ist schon exakt, wenn sie nur geschlossen ist.
+\item Eine~$2$-Form auf dem gelochten dreidimensionalen 
+Raum~$\RR^3\setminus\{0\}$ ist genau dann exakt, wenn sie geschlossen ist und
+wenn ihr Integral über die Einheitskugeloberfläche verschwindet.
+\item Eine~$1$-Form auf der zweifach gelochten Ebene (also der Zahlenebene, aus
+der zwei Punkte entfernt wurden) ist genau dann exakt, wenn sie geschlossen ist
+und wenn die Integrale über kleine Kreise um die beiden Löcher verschwinden.
+\item Wir entfernen aus dem dreidimensionalen Raum die~$z$-Achse sowie den in der~$x$-$y$-Ebene
+liegenden Kreis mit Mittelpunkt~$(0|0|0)$ und Radius~$2$. Eine~$1$-Form auf
+diesem Gebilde ist genau dann exakt, wenn sie geschlossen ist und wenn ihre
+Integrale über die folgenden beiden Kurven verschwinden: der Einheitskreis in
+der~$x$-$y$-Ebene und der in der~$x$-$z$-Ebene liegende Kreis mit
+Mittelpunkt~$(2|0|0)$ und Radius~$1$.
+\item Eine~$2$-Form auf demselben Gebilde ist genau dann exakt, wenn sie
+geschlossen ist und wenn ihr Integral über die Oberfläche eines bestimmten
+Torus (welchen?) verschwindet.
+\end{enumerate}
+
+\end{document}
