@@ -17,7 +17,7 @@
   Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Prüfung auf Primalität,
   Summe der Primzahlen unter n
 
-* Ana-Bootcamp: Ableitung im Eindimensionalen
+* Ana-Bootcamp: Ableitung und Integration im Eindimensionalen
 
 
 === Tag 2

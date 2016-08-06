@@ -1,0 +1,34 @@
+Navier--Stokes:
+* Simulation eingebetteter Teilchen, die sich gemäß der Flüssigkeit bewegen
+* Kompliziertere Geometrie (insbesondere Hindernis in der Mitte)
+
+Orbitalmechanik:
+* Wann ist die nächste Mondfinsternis?
+* Hohmann-Transfer
+* Welche Orbiten sind um Lagrange-Punkte möglich?
+* Umgestaltung als Spiel
+
+Planetenlandung:
+* Abnahme der Raketenmasse im Laufe der Zeit
+* Öffnen des Fallschirms
+* Luftdruck in Abhängigkeit der Höhe
+
+Modem:
+* Mehrere Töne gleichzeitig
+* Kürzere Tondauer
+
+Knotenentwirrung:
+* Wahrscheinlichkeit für Unknoten bei dem einen Spiel vom Spieleabend
+* Modell mit Federn statt zweiter Ableitung
+* Durchdringungsverhinderung
+
+Form einer Trommel hören:
+* Frequenzen aufzeichnen und zumindest die Trommelgröße ermitteln
+
+Maxwell-Gleichungen:
+* Simulation programmieren, zum Beispiel soll man ein Elektron herumziehen
+  und beobachten können, wie sich ein E-Feld abschnürt (Literatur:
+  http://www.eecs.wsu.edu/~schneidj/ufdtd/)
+
+Entropie:
+* ...
