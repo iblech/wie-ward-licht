@@ -1,19 +1,18 @@
-=== Tag 0
+=== Tag 0 (Kennenlernsitzung am Abend)
 
-* https://www.youtube.com/watch?v=vOFcHqImXJ8
-  Navier--Stokes
+* Kennenlernspiel mit dem 2-Simplex
 
-* https://www.youtube.com/watch?v=iJKladnXpUs
-  Kerbal Space Program
+* Ausblick auf den Kurs: u.a. Maxwell-Gleichungen, Hörbarkeit der Form einer
+  Trommel, Verhedderung von Kopfhörern
 
-* Maxwell-Gleichung
-
-* Shape of a drum
+* Videos:
+  https://www.youtube.com/watch?v=vOFcHqImXJ8 (Navier--Stokes)
+  https://www.youtube.com/watch?v=iJKladnXpUs (Kerbal Space Program)
 
 
 === Tag 1
 
-* Python-Bootcamp: Variablen, for, if (kein while)
+* Python-Bootcamp: Variablen, for, if (kein while), Plots
   mit Aufgaben/Demos: Summe der ersten n Zahlen, Summe der ersten n
   Quadratzahlen, Prüfung einer Zahl auf Perfektheit, Prüfung auf Primalität,
   Summe der Primzahlen unter n
@@ -25,26 +24,51 @@
 
 * Gewöhnliche Differentialgleichungen, explizites Euler-Verfahren
 
+* Kleine Programmierprojekte: Freier Fall, Fall mit Reibung, exponentieller
+  Abfall, Wassereimer mit Loch
 
-=== Tag 3
+* LA-Bootcamp: Vektoren, Matrizen, Matrixmultiplikation, lineare
+  Gleichungssysteme
+
+* Ana-Bootcamp: Ableitung im Mehrdimensionalen, Gradient, Rotation, Divergenz
+
+
+=== Tag 3 (Wandertag, daher nur vormittags Kurs)
 
 * Partielle Differentialgleichungen und ihre Numerik am Beispiel der
   Poissongleichung
 
 
-=== Tag ?
+=== Tag 4
 
-* Weiter mit Wärmeleitungsgleichung, teilweise auch mit zeitlicher Entwicklung
+* Weiter mit Wärmeleitungsgleichung, auch mit zeitlicher Entwicklung
+
+* Freie Arbeit an Projekten: Orbitalmechanik (mit Blick auf Orbit um
+  Lagrange-Punkte), Spiel und Spaß mit Gravitationspotenzialen ("Quecksilber"),
+  Planetenlandung, Navier--Stokes, Knotenentwirrung, Modem.
+
+
+=== Tag 5 (Ausschlaftag, daher nur nachmittags Kurs)
 
 * Freie Arbeit an Projekten
 
 
-=== Tag ?
+=== Tag 6
 
 * Freie Arbeit an Projekten
 
 
-=== Tag N
+=== Tag 7 (Rotation, also nur nachmittags Kurs)
+
+* Oberflächen- und Volumenintegrale
+
+
+=== Tag 8
+
+* Diskussion der ersten und zweiten Maxwell-Gleichung
+
+
+=== Tag 9
 
 * Diskussion der vierten Maxwell-Gleichung
 
