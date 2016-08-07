@@ -13,17 +13,28 @@ Planetenlandung:
 * Öffnen des Fallschirms
 * Luftdruck in Abhängigkeit der Höhe
 
-Modem:
-* Mehrere Töne gleichzeitig
-* Kürzere Tondauer
+Schallexperimente und Modem:
+* Was passiert, wenn man zwei Sinustöne mit nah aneinander liegendenden
+  Frequenzen gleichzeitig abspielt? (Dieses Phänomen heißt "Schwebung".)
+* Mit welchen Verhältnissen muss man die Grundfrequenz multiplizieren,
+  um die aus der Musik bekannten Intervalle (Oktave, Terz, Sekunde, ...) zu
+  erhalten?
+* Bis zu welcher Frequenz können deine Mitschülerinnen und Mitschüler hören?
+* Was passiert, wenn man zwei Handys gegenseitig anrufen lässt und beide Handys
+  auf "mithören" (Lautsprecher) stellt?
+* Man könnte das Modemprogramm so erweitern, dass es mehrere Töne gleichzeitig
+  abspielt.
+* Oder man könnte die Tondauer verkürzen.
 
 Knotenentwirrung:
 * Wahrscheinlichkeit für Unknoten bei dem einen Spiel vom Spieleabend
 * Modell mit Federn statt zweiter Ableitung
-* Durchdringungsverhinderung
+* Weitere Arbeit an Durchdringungsverhinderung, etwa durch Anpassung
+  von Konstanten
 
 Form einer Trommel hören:
-* Frequenzen aufzeichnen und zumindest die Trommelgröße ermitteln
+* Frequenzen mit dem Mikrofon aufzeichnen und zumindest die Trommelgröße
+  ermitteln
 
 Maxwell-Gleichungen:
 * Simulation programmieren, zum Beispiel soll man ein Elektron herumziehen
