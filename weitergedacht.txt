@@ -1,11 +1,19 @@
 Navier--Stokes:
+* Experimente mit verschiedenen Viskositäten
+* Untersuchung des Energieverlusts: Ist es in Ordnung so? Falls nicht: Liegt's
+  am expliziten Euler-Verfahren? Sollte man die Zeitschrittweite verkleinern?
 * Simulation eingebetteter Teilchen, die sich gemäß der Flüssigkeit bewegen
+* Simulation sich drehender Quietscheentchen
 * Kompliziertere Geometrie (insbesondere Hindernis in der Mitte)
+* Kompliziertere Randbedingungen (insbesondere "Düsen" sowie die nützliche
+  "do-nothing"-Randbedingung)
 
 Orbitalmechanik:
 * Wann ist die nächste Mondfinsternis?
 * Hohmann-Transfer
 * Welche Orbiten sind um Lagrange-Punkte möglich?
+* Wieso sind die Lagrange-Punkte L4 und L5 stabil? Wo genau liegen sie?
+  http://www.math.cornell.edu/~templier/junior/final_paper/Thomas_Greenspan-Stability_of_Lagrange_points.pdf
 * Umgestaltung als Spiel
 
 Planetenlandung:
