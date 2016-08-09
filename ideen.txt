@@ -57,6 +57,13 @@
 * Conway's Game of Life (inkl. Sichtung des gigantischen Wikis dazu)
 
 
+=== Nicht vergessen
+
+* Einsicht: Differentialgleichungen beschreiben oft Phänomene auf ganz
+  unterschiedlichen Skalen. Zum Beispiel Verwirbelungen nach Hawaii und Wolken
+  wie aus dem All betrachtet. Danke an Christopher Linsenmann dafür!
+
+
 === Noch nachdenken
 
 * Schrödingergleichung
