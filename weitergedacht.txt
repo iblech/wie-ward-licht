@@ -43,3 +43,7 @@ Maxwell-Gleichungen:
 
 Entropie:
 * ...
+
+Boot in Wasser:
+* Dynamik eines Boots in Wasser simulieren. Was passiert, wenn man
+  auf einer Seite mehr Gewicht draufpackt? Muss man Drehmomente beachten?

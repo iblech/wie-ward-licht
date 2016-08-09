@@ -9,7 +9,7 @@ import sys
 
 #####################################################################
 # Hier die Zustandsvariablen initialisieren: Position und Geschwindigkeit
-# des # Spielers
+# des Spielers
 #####################################################################
 
 pos = np.array([0.0, 100.0])
